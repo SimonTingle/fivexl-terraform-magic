@@ -1,0 +1,8 @@
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+# Application Content
+*.zip
+# Local config/secrets
+*.env
