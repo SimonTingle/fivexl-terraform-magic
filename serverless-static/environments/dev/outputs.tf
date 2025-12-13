@@ -1,6 +1,4 @@
-# File: serverless-static/modules/s3-static-site/outputs.tf
-
 output "website_url" {
-  description = "The CloudFront Distribution Domain Name (the public URL)"
-  value       = aws_cloudfront_distribution.s3_distribution.domain_name
+  description = "The public URL of the Dev Static Website (via CloudFront)"
+  value       = module.static_website.website_url
 }
