@@ -97,3 +97,56 @@ cd ../prod/
 terraform init -backend-config="profile=prod-account"
 terraform apply
 ```
+## Project Evolution
+
+See the full document here:  
+[Project Evolution](project_evolution.md)
+
+Proof of AWS functionality: 
+Changes to Outputs:
+  + website_url = (known after apply)
+module.static_website.aws_cloudfront_origin_access_control.oac: Creating...
+module.static_website.aws_s3_bucket.content: Creating...
+module.static_website.aws_cloudfront_origin_access_control.oac: Creation complete after 1s [id=E2AP7IQ8NRPVFO]
+module.static_website.aws_s3_bucket.content: Creation complete after 3s [id=fivexl-dev-static-site-content]
+module.static_website.aws_s3_bucket_versioning.content: Creating...
+module.static_website.aws_cloudfront_distribution.s3_distribution: Creating...
+module.static_website.aws_s3_bucket_versioning.content: Creation complete after 2s [id=fivexl-dev-static-site-content]
+module.static_website.aws_cloudfront_distribution.s3_distribution: Still creating... [00m10s elapsed]
+module.static_website.aws_cloudfront_distribution.s3_distribution: Still creating... [00m20s elapsed]
+module.static_website.aws_cloudfront_distribution.s3_distribution: Still creating... [00m30s elapsed]
+module.static_website.aws_cloudfront_distribution.s3_distribution: Still creating... [00m40s elapsed]
+module.static_website.aws_cloudfront_distribution.s3_distribution: Still creating... [00m50s elapsed]
+module.static_website.aws_cloudfront_distribution.s3_distribution: Still creating... [01m00s elapsed]
+module.static_website.aws_cloudfront_distribution.s3_distribution: Still creating... [01m10s elapsed]
+module.static_website.aws_cloudfront_distribution.s3_distribution: Still creating... [01m20s elapsed]
+module.static_website.aws_cloudfront_distribution.s3_distribution: Still creating... [01m30s elapsed]
+module.static_website.aws_cloudfront_distribution.s3_distribution: Still creating... [01m40s elapsed]
+module.static_website.aws_cloudfront_distribution.s3_distribution: Still creating... [01m50s elapsed]
+module.static_website.aws_cloudfront_distribution.s3_distribution: Still creating... [02m00s elapsed]
+module.static_website.aws_cloudfront_distribution.s3_distribution: Still creating... [02m10s elapsed]
+module.static_website.aws_cloudfront_distribution.s3_distribution: Still creating... [02m20s elapsed]
+module.static_website.aws_cloudfront_distribution.s3_distribution: Still creating... [02m30s elapsed]
+module.static_website.aws_cloudfront_distribution.s3_distribution: Still creating... [02m40s elapsed]
+module.static_website.aws_cloudfront_distribution.s3_distribution: Still creating... [02m50s elapsed]
+module.static_website.aws_cloudfront_distribution.s3_distribution: Still creating... [03m00s elapsed]
+module.static_website.aws_cloudfront_distribution.s3_distribution: Still creating... [03m10s elapsed]
+module.static_website.aws_cloudfront_distribution.s3_distribution: Still creating... [03m20s elapsed]
+module.static_website.aws_cloudfront_distribution.s3_distribution: Still creating... [03m30s elapsed]
+module.static_website.aws_cloudfront_distribution.s3_distribution: Still creating... [03m40s elapsed]
+module.static_website.aws_cloudfront_distribution.s3_distribution: Still creating... [03m50s elapsed]
+module.static_website.aws_cloudfront_distribution.s3_distribution: Still creating... [04m00s elapsed]
+module.static_website.aws_cloudfront_distribution.s3_distribution: Still creating... [04m10s elapsed]
+module.static_website.aws_cloudfront_distribution.s3_distribution: Still creating... [04m20s elapsed]
+module.static_website.aws_cloudfront_distribution.s3_distribution: Still creating... [04m30s elapsed]
+module.static_website.aws_cloudfront_distribution.s3_distribution: Still creating... [04m40s elapsed]
+module.static_website.aws_cloudfront_distribution.s3_distribution: Still creating... [04m50s elapsed]
+module.static_website.aws_cloudfront_distribution.s3_distribution: Still creating... [05m00s elapsed]
+module.static_website.aws_cloudfront_distribution.s3_distribution: Still creating... [05m10s elapsed]
+module.static_website.aws_cloudfront_distribution.s3_distribution: Still creating... [05m20s elapsed]
+module.static_website.aws_cloudfront_distribution.s3_distribution: Still creating... [05m30s elapsed]
+module.static_website.aws_cloudfront_distribution.s3_distribution: Creation complete after 5m33s [id=E1E03TY3V28OSA]
+module.static_website.data.aws_iam_policy_document.s3_policy: Reading...
+module.static_website.data.aws_iam_policy_document.s3_policy: Read complete after 0s [id=3728904296]
+module.static_website.aws_s3_bucket_policy.content: Creating...
+module.static_website.aws_s3_bucket_policy.content: Creation complete after 0s [id=fivexl-dev-static-site-content]
