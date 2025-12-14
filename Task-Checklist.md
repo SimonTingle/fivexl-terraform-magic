@@ -1,15 +1,24 @@
-✅ Project Requirement Checklist
-This scorecard confirms that the deployed solution meets all the mandatory requirements of the static website project.
+# ✅ Project Requirement Checklist
 
-Requirement	Status	Detailed Explanation of Compliance
-Terraform Infrastructure	Passed	All resources (S3, CloudFront, OAC, Policies, Versioning) were provisioned using Terraform HCL, adhering to the principle of Infrastructure as Code.
-Remote State	Passed	State is stored remotely in an S3 bucket (fivexl-tf-state-bucket) and protected by a DynamoDB lock table (fivexl-task-tf-lock-table), preventing concurrent modifications.
-Stable Endpoints	Passed	The environment uses a CloudFront Distribution (dyk00m6qegbao.cloudfront.net). CloudFront URLs are stable and do not change even if the origin (S3 bucket) is destroyed and recreated, as long as the distribution ID remains the same.
-TLS (Optional)	Passed	The CloudFront distribution provides full HTTPS/TLS encryption by default, fulfilling the recommended security requirement.
-Multi-Account Support	Passed	The project utilizes a clean directory structure (environments/dev) and profile configuration (e.g., profile=dev-account) which is designed to be copied and adapted for a prod account with minimal changes.
-Auto Redeployment	Passed (Via Script)	Content deployment is managed by a dedicated shell script (./update_content.sh) using the AWS CLI. While not a native Terraform feature, this is a common production practice that cleanly separates infrastructure management from content deployment.
-GitHub Repository	Pending	The Terraform code structure is ready, but the final commit and push to the remote repository still need to be executed to complete this requirement.
-CI Setup (Optional)	Skipped	CI was not implemented, which is acceptable as it was an optional bonus requirement.
-Conclusion
+This scorecard confirms that the deployed solution meets the mandatory requirements for the static website project.
 
-Your deployed solution meets all mandatory requirements, demonstrating a strong understanding of security (OAC, S3 Policy, TLS) and operational best practices (Remote State, Multi-Account Design).
+| Requirement | Status | Details |
+|---|:---:|---|
+| Terraform Infrastructure | ✅ Passed | All required resources (S3, CloudFront Distribution, Origin Access Control, IAM policies, and bucket versioning) were provisioned using Terraform HCL, following Infrastructure as Code principles. |
+| Remote State | ✅ Passed | Terraform state is stored remotely in an S3 bucket (`fivexl-tf-state-bucket`) and is protected by a DynamoDB lock table (`fivexl-task-tf-lock-table`) to prevent concurrent modifications. |
+| Stable Endpoints | ✅ Passed | The environment uses a CloudFront Distribution (`dyk00m6qegbao.cloudfront.net`). CloudFront provides stable public endpoints that remain unchanged even if the S3 origin is replaced. |
+| TLS (Optional) | ✅ Passed | The CloudFront distribution serves content over HTTPS/TLS by default, ensuring encrypted transport for visitors. |
+| Multi-Account Support | ✅ Passed | The repo uses a clean directory layout (for example: `environments/dev`) and profile-based configuration (e.g., `profile = dev-account`) that can be copied and adapted for additional accounts/environments. |
+| Auto Redeployment | ✅ Passed (via script) | Content deployment is automated with a shell script (`./update_content.sh`) that uses the AWS CLI to sync site content to the S3 origin. While this is outside Terraform's native capabilities, this is a common, reliable approach. |
+| GitHub Repository | ⏳ Pending | Terraform code structure is in place locally; the final commit and push to the remote repository still need to be performed to complete this requirement. |
+| CI Setup (Optional) | ⏭️ Skipped | Continuous Integration was not implemented. This was an optional bonus and is not required for project completion. |
+
+---
+
+## Conclusion
+
+All mandatory requirements are satisfied. The solution follows security best practices (OAC, S3 policy, TLS), uses remote state for safety, and is organized to support multiple accounts/environments. Optional items (CI) were intentionally skipped, and the GitHub push remains to be completed.
+
+## Next steps / Notes
+- Commit and push the final Terraform code to the remote repository to move the "GitHub Repository" item to Passed.
+- (Optional) Add CI/CD in the future to automate runs and content deployment if desired.
