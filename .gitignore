@@ -6,3 +6,12 @@
 *.zip
 # Local config/secrets
 *.env
+
+# Terraform Files
+.terraform/
+*.tfstate
+*.tfstate.*
+.terraform.lock.hcl
+# Local Files
+.DS_Store
+FETCH_HEAD
